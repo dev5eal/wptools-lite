@@ -374,7 +374,20 @@ function overrideLocalesFromInput(){
 function makeGeoCode(){
 	document.getElementById("navigator-geocode-list").innerHTML = config.geoIP.map(c => "<option>"+c+"</option>").join("");
 }
-
+function switchTheme(){
+	let theme = document.getElementById("theme");
+	if (theme) {
+		theme.remove();
+	}
+	else {
+		theme = document.createElement("link");
+		theme.id = "theme";
+		theme.rel = "stylesheet";
+		theme.type = "text/css";
+		theme.href = "./css/theme-light.css";
+		document.head.appendChild(theme);
+	}
+}
 function run(){
 	loadSitesList();
 	makeGeoCode();
@@ -399,11 +412,11 @@ function run(){
 	document.getElementById("navigator-scope-btn").addEventListener("click", overrideLocalesFromInput);
 	document.getElementById("navigator-links-btn").addEventListener("click", extractLinksFromInput);
 	document.getElementById("navigator-o2i-btn").addEventListener("click", outputAsInput);
+	document.getElementById("theme-btn").addEventListener("click", switchTheme);
 	document.getElementById("navigator-trim-btn").addEventListener("click", () => {
 		document.getElementById("navigator-input").value = Utils.linksToRel(document.getElementById("navigator-input").value.split('\n')).join("\n");
 	});
 	document.getElementById("navigator-uniq-btn").addEventListener("click", () => {
 		document.getElementById("navigator-input").value = Utils.filterUnique(document.getElementById("navigator-input").value.split('\n')).join("\n");
 	});
-	
 }

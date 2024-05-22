@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="./js/xlsx.min.js"></script>
 	<script type="text/javascript" src="./js/tribute.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/style.css"> <!-- Main Custom Styles -->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/theme-light.css"> -->
 </head>
 <body>
 	<section>
@@ -23,8 +24,10 @@
 				<li class="nav-item"><a class="nav-link" href="./pl2-checker.html">PL2 CHECKER</a></li>
 				-->
 			</ul>
-			<div class="col sm inline nav-help">
-				<small><a href="https://confluence.kaspersky.com/pages/viewpage.action?pageId=537499535" target="_blank">HELP&nbsp;&&nbsp;HOW&nbsp;TO</a></small>
+			<div class="col sm inline nav-help center">
+				<input id="theme-btn" type="checkbox" checked>
+				<label class="check" for="theme-btn">Switch Theme</label>
+				<a href="https://github.com/dev5eal/wptools-lite/blob/main/README.md" target="_blank">Help & Guides</a>
 			</div>
 		</nav>
 	</section>
@@ -49,7 +52,6 @@
 						<button class="green" id="navigator-go-btn" title="Generate table with links">Get Links</button>
 					</div>
 				</div>
-				
 				<div class="row">
 					<div class="col sm">
 						<label for="sites">Locales</label>
@@ -58,13 +60,12 @@
 					</div>
 					<div class="col lg">
 						<label for="navigator-input">Page Path</label>
-						<textarea class="wide" id="navigator-input"  placeholder="Page Path&#xD;ex: /home-security&#xD;&#xD;Use&Tab;'@'&Tab;for common pages...&#xD;Use&Tab;'?'&Tab;for LRC verdict pages..."></textarea>
+						<textarea class="wide" id="navigator-input" placeholder="Page Path&#xD;ex: /home-security&#xD;&#xD;Use&Tab;'@'&Tab; for suggestions of common pages...&#xD;Use&Tab;'?'&Tab;for suggestions of LRC verdict pages...&#xD;&#xD;Also use this field for scope override..."></textarea>
 						<div id="navigator-input-list" class="mention-container"></div>
 						<div class="row center">
 							<div class="col lg inline wrap">
 								<button id="navigator-trim-btn" title="Remove domain part, up to first /">Trim Urls</button>
 								<button id="navigator-uniq-btn" title="Remove duplicate lines from input">Filter Unique</button>
-								
 								<button id="navigator-links-btn" title="Use it to extact links from text inside input field">Extract Links</button>
 								<button id="navigator-o2i-btn" title="Copy content of output to input field">Output as Input</button>
 							</div>
@@ -78,7 +79,6 @@
 					<div class="col lg">
 						<input class="fill" type="text" placeholder="Branch Name (default is Master)" id="navigator-branch" autocomplete="off" list="navigator-branch-list">
 					</div>
-					
 				</div>
 				<div class="row wrap">
 					<div class="col md inline vcenter">

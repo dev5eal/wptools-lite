@@ -38,9 +38,13 @@ input[type="radio"] + label {
   user-select: none;
   cursor: pointer;
 }
+input[type="radio"]:hover + label {
+  filter: brightness(140%);
+}
 input[type="radio"]:checked + label {
   background-color: #00A88E;
   box-shadow: 0px 0px 10px #000;
+  color: #1d1d1d;
 }
 input[type=number]::-webkit-inner-spin-button {
   height: 2em;
@@ -102,7 +106,6 @@ button.green, .btn.green{
 }
 button.green:hover, .btn.green:hover {
   color: #1d1d1d;
-  -webkit-text-stroke: 1px #000;
 }
 button.blue, .btn.blue{
   background-color: #1d1ddd;
@@ -113,8 +116,9 @@ button:hover, .btn:hover, nav li a:hover {
   cursor: pointer;
 }
 button:active {
+  box-shadow: 1px 1px 10px #00A88E;
   background-color: #00A88E;
-  outline: #00A88E;
+  color: #1d1d1d;
 }
 summary {
   font-weight: 700;
@@ -320,9 +324,13 @@ input[type="checkbox"]{
   user-select: none;
   cursor: pointer;
 }
+.check:hover{
+  filter: brightness(140%);
+}
 input[type="checkbox"]:checked + .check {
   background-color: #00A88E;
   box-shadow: 0px 0px 10px #000;
+  color: #1d1d1d;
 }
 .err, .err a {
   color: red;
@@ -407,14 +415,6 @@ button[tooltip]:hover::after, {
 .menu-item:hover:not(.selected) {
   background-color: #333;
 }
-.mention-container {
-  background-color: #222;
-  border: 1px solid #333;
-  border-radius: 8px;
-  position: absolute;
-  overflow: auto;
-  text-align: left;
-}
 .tribute-container {
   position: absolute;
   top: 0;
@@ -425,7 +425,7 @@ button[tooltip]:hover::after, {
   z-index: 999999;
   border-radius: 8px;
   border: 1px solid #333;
-  background: #1d1d1d;
+  background-color: #1d1d1d;
   max-width: 350px;
   padding: 5px;
 }
@@ -441,7 +441,7 @@ button[tooltip]:hover::after, {
   cursor: pointer;
 }
 .tribute-container li.highlight {
-  background: #444;
+  background-color: #444;
   border-radius: 4px;
 }
 .tribute-container li span {
