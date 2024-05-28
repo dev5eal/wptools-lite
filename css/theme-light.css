@@ -30,3 +30,9 @@ button, input[type="checkbox"]:checked + .check, input[type="radio"]:checked + l
   background-color: #00A88E;
   color: #fff;
 }
+.jodit_wysiwyg {
+  background-color: #fff;
+}
+.jodit_placeholder {
+  color: #000;
+}

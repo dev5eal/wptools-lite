@@ -453,3 +453,21 @@ button[tooltip]:hover::after, {
 .tribute-container .menu-highlighted {
   font-weight: bold;
 }
+.editor {
+  text-align: left;
+  text-wrap: wrap;
+}
+.jodit_wysiwyg {
+  background-color: #444;
+}
+.jodit_placeholder {
+  color: #fff!important;
+}
+
+.jodit_toolbar_btn{
+  color: #000!important;
+}
+
+.jodit_toolbar_btn span{
+  color: #000!important;
+}
