@@ -376,7 +376,6 @@ function makeGeoCode(){
 }
 function switchTheme(){
 	let theme = document.getElementById("theme");
-	let jodit = document.querySelector(".jodit_dark_theme") || document.querySelector(".jodit_default_theme"); // JODIT
 	if (theme) {
 		theme.remove();
 	}
@@ -387,12 +386,6 @@ function switchTheme(){
 		theme.type = "text/css";
 		theme.href = "./css/theme-light.css";
 		document.head.appendChild(theme);
-	}
-	if (jodit.classList.contains("jodit_dark_theme")){
-		jodit.classList.replace("jodit_dark_theme", "jodit_default_theme");
-	} 
-	else {
-		jodit.classList.replace("jodit_default_theme", "jodit_dark_theme");
 	}
 }
 function run(){
