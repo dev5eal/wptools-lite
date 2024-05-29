@@ -6,6 +6,7 @@ const removeImagesBtn = document.querySelector("#remove-images");
 // from main.js
 function switchTheme() {
   let theme = document.getElementById("theme");
+  let jodit = document.querySelector(".jodit_dark_theme") || document.querySelector(".jodit_default_theme"); // JODIT
   if (theme) {
     theme.remove();
   } else {
@@ -16,6 +17,12 @@ function switchTheme() {
     theme.href = "./css/theme-light.css";
     document.head.appendChild(theme);
   }
+  if (jodit.classList.contains("jodit_dark_theme")){
+		jodit.classList.replace("jodit_dark_theme", "jodit_default_theme");
+	} 
+	else {
+		jodit.classList.replace("jodit_default_theme", "jodit_dark_theme");
+	}
 }
 
 // function to handle word content and display in editor window
@@ -121,6 +128,7 @@ function replaceImage(src) {
 function initJodit(id, lang = "Auto") {
   var editor = new Jodit("#" + id, {
     language: lang,
+    theme: 'dark'
   });
 }
 
