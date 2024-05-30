@@ -2,10 +2,12 @@ const uploadFile = document.querySelector("#document");
 const themeBtn = document.querySelector("#theme-btn");
 const sanitizeBtn = document.querySelector("#sanitize");
 const removeImagesBtn = document.querySelector("#remove-images");
+let joditTheme = "jodit_theme_dark";
 
 // from main.js
 function switchTheme() {
   let theme = document.getElementById("theme");
+  let jodit = document.querySelector(".jodit-container"); // JODIT
   if (theme) {
     theme.remove();
   } else {
@@ -15,6 +17,13 @@ function switchTheme() {
     theme.type = "text/css";
     theme.href = "./css/theme-light.css";
     document.head.appendChild(theme);
+  }
+  if (jodit.classList.contains("jodit_theme_dark")) {
+    console.log("dark");
+    jodit.classList.replace("jodit_theme_dark", "jodit_theme_default");
+  } else if (jodit.classList.contains("jodit_theme_default")) {
+    console.log("def");
+    jodit.classList.replace("jodit_theme_default", "jodit_theme_dark");
   }
 }
 
@@ -114,3 +123,5 @@ uploadFile.addEventListener("change", handleFileSelect);
 themeBtn.addEventListener("click", switchTheme);
 sanitizeBtn.addEventListener("click", sanitize);
 removeImagesBtn.addEventListener("click", clearImg);
+
+const editor = new Jodit("#editor", { theme: "dark" });
