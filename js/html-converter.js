@@ -1,13 +1,7 @@
-import { Jodit } from "../node_modules/jodit/esm/index.js";
-import "../node_modules/jodit/esm/plugins/fullsize/fullsize.js";
-import "../node_modules/jodit/esm/plugins/iframe/iframe.js";
-import "../node_modules/jodit/esm/plugins/source/source.js";
-
 const uploadFile = document.querySelector("#document");
 const themeBtn = document.querySelector("#theme-btn");
 const sanitizeBtn = document.querySelector("#sanitize");
 const removeImagesBtn = document.querySelector("#remove-images");
-let joditTheme = "dark";
 
 // from main.js
 function switchTheme() {
@@ -120,7 +114,3 @@ uploadFile.addEventListener("change", handleFileSelect);
 themeBtn.addEventListener("click", switchTheme);
 sanitizeBtn.addEventListener("click", sanitize);
 removeImagesBtn.addEventListener("click", clearImg);
-
-Jodit.make("#editor", {
-  theme: joditTheme,
-});
