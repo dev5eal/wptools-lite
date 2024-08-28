@@ -306,7 +306,7 @@ function getLinks(){
 function getLocLinks(site, pages){
 	let target = document.getElementById("pub-target").querySelector("input:checked").value;
 	let branch = document.getElementById("navigator-branch").value || "master";
-	let loc = (site == "cafr" && target != "editor") ? "ca" : (site == "kzkk" && target != "editor") "kz" ? site;
+	let loc = (site == "cafr" && target != "editor") ? "ca" : ((site == "kzkk" && target != "editor") ? "kz" : site);
 	let out = pages.map(page => {
 		let res = {};
 		if (pages.length == 1) res.th = site.toUpperCase();
