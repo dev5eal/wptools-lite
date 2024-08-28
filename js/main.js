@@ -274,7 +274,7 @@ function getLocList(){
 		}
 		// LITE SITES
 		else if (opt === "lite") { 
-			loc.push("afrique", "bg", "ca", "cafr", "cokr", "comhk", "comtw", "comvn", "coth", "cz", "gr", "hu", "id", "kz", "kzru","ma", "pt", "ro", "rs");
+			loc.push("afrique", "bg", "ca", "cafr", "cokr", "comhk", "comtw", "comvn", "coth", "cz", "gr", "hu", "id", "kz", "kzkk","ma", "pt", "ro", "rs");
 		}
 		else {
 			loc.push(opt);
@@ -306,11 +306,11 @@ function getLinks(){
 function getLocLinks(site, pages){
 	let target = document.getElementById("pub-target").querySelector("input:checked").value;
 	let branch = document.getElementById("navigator-branch").value || "master";
-	let loc = (site == "cafr" && target != "editor") ? "ca" : site;
+	let loc = (site == "cafr" && target != "editor") ? "ca" : (site == "kzkk" && target != "editor") "kz" ? site;
 	let out = pages.map(page => {
 		let res = {};
 		if (pages.length == 1) res.th = site.toUpperCase();
-		res.url = getDomains(loc, target, branch)+( (site == "cafr" && target != "editor") ? "/fr" : "") + getParams(page);
+		res.url = getDomains(loc, target, branch)+( (site == "cafr" && target != "editor") ? "/fr" : ((site == "kzkk" && target != "editor") ? "/kk" : "")) + getParams(page);
 		return res;
 	});
 	return (pages.length > 1) ? [{"th": site.toUpperCase()}].concat(out) : out;
