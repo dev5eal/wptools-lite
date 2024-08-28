@@ -36,8 +36,8 @@ var config = {
 		"hu.kaspersky.com":				{ "domain": "hu",				"tags": ["nonen", "lite"],	"alias": ["hu", "hungary", "l-hu"] },
 		"www.kaspersky.com.hk":		{ "domain": "comhk",		"tags": ["nonen", "lite"],	"alias": ["comhk", "hk", "hong kong", "hong kong zh", "hong-kong", "l-hk"] },
 		"id.kaspersky.com":				{ "domain": "id",				"tags": ["nonen", "lite"],	"alias": ["id", "l-id", "indonesia"] },
-		"www.kaspersky.kz":				{ "domain": "kz",				"tags": ["nonen", "lite"],	"alias": ["kz", "kzkz", "kz-kz", "l-kz", "l-kz-kz", "kazakhstan"] },
-		"www.kaspersky.kz/ru":		{ "domain": "kzru",			"tags": ["nonen", "lite"],	"alias": ["kzru", "kz-ru", "l-kz-ru", "l-kzru", "kazakhstan-ru"] },
+		"www.kaspersky.kz":				{ "domain": "kz",				"tags": ["nonen", "lite"],	"alias": ["kz", "kzru", "kz-ru", "l-kz", "l-kz-ru", "kazakhstan"] },
+		"www.kaspersky.kz/kk":		{ "domain": "kzkk",			"tags": ["nonen", "lite"],	"alias": ["kzkk", "kzkz", "kz-kk", "kz-kz", "l-kz-kk", "l-kzkk", "kazakhstan-kk"] },
 		"www.kaspersky.co.kr":		{ "domain": "cokr",			"tags": ["nonen", "lite"],	"alias": ["cokr", "korea", "kr", "l-kr"] },
 		"www.kaspersky.ma":				{ "domain": "ma",				"tags": ["nonen", "lite"],	"alias": ["l-ma", "ma", "maroc", "marocco"] },
 		"www.kaspersky.pt":				{ "domain": "pt",				"tags": ["nonen", "lite"],	"alias": ["l-pt", "portugal", "pt"] },
@@ -90,7 +90,7 @@ var config = {
 		"se": "www.kaspersky.se",
 		"usa": "usa.kaspersky.com",
 		"kz": "www.kaspersky.kz",
-		"kzru": "www.kaspersky.kz/ru"
+		"kzkk": "www.kaspersky.kz/kk"
 	},
 	"pages": {
 		"b2c": "/home-security",
