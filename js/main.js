@@ -306,11 +306,14 @@ function getLinks(){
 function getLocLinks(site, pages){
 	let target = document.getElementById("pub-target").querySelector("input:checked").value;
 	let branch = document.getElementById("navigator-branch").value || "master";
-	let loc = (site == "cafr" && target != "editor") ? "ca" : ((site == "kzkk" && target != "editor") ? "kz" : site);
+	let loc = (site == "cafr" && target != "editor") ? "ca" : 
+		(site == "kzkk" && target != "editor") ? "kz" : 
+		(site == "myms" && target != "editor") ? "my" : 
+		site;
 	let out = pages.map(page => {
 		let res = {};
 		if (pages.length == 1) res.th = site.toUpperCase();
-		res.url = getDomains(loc, target, branch)+( (site == "cafr" && target != "editor") ? "/fr" : ((site == "kzkk" && target != "editor") ? "/kk" : "")) + getParams(page);
+		res.url = getDomains(loc, target, branch)+( (site == "cafr" && target != "editor") ? "/fr" : (site == "kzkk" && target != "editor") ? "/kk" : (site == "myms" && target != "editor") ? "/ms" : "") + getParams(page);
 		return res;
 	});
 	return (pages.length > 1) ? [{"th": site.toUpperCase()}].concat(out) : out;
