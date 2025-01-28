@@ -262,19 +262,19 @@ function getLocList(){
 	options.forEach(opt => {
 		// NON-EN
 		if (opt === "nen") {
-			loc.push("be", "cojp", "combr", "comcn", "comtr", "de", "dk", "es", "fi", "fr", "it", "latam", "me", "nl", "no", "ru", "se");
+			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full") && !site.tags.includes("en")).map(site => site.domain));
 		}
 		// ALL EN
 		else if (opt === "en") { 
-			loc.push("com", "comau", "coin", "couk", "coza", "me-en", "usa");
+			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full") && site.tags.includes("en")).map(site => site.domain));
 		}
 		// ALL NG
 		else if (opt === "ng") {
-			loc.push("be", "coin", "cojp", "com", "comau", "combr", "comcn", "comtr", "couk", "coza", "de", "dk", "es", "fi", "fr", "it", "latam", "me", "me-en", "nl", "no", "ru", "se", "usa");
+			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full")).map(site => site.domain));
 		}
 		// LITE SITES
 		else if (opt === "lite") { 
-			loc.push("afrique", "bg", "ca", "cafr", "cokr", "comhk", "comtw", "comvn", "coth", "cz", "gr", "hu", "id", "kz", "kzkk","ma", "pt", "ro", "rs");
+			loc.push(Object.values(config.sites).filter(site => site.tags.includes("lite")).map(site => site.domain));
 		}
 		else {
 			loc.push(opt);
