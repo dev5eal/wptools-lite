@@ -262,19 +262,19 @@ function getLocList(){
 	options.forEach(opt => {
 		// NON-EN
 		if (opt === "nen") {
-			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full") && !site.tags.includes("en")).map(site => site.domain));
+			loc.push(... Object.values(config.sites).filter(site => site.tags.includes("full") && !site.tags.includes("en")).map(site => site.domain));
 		}
 		// ALL EN
 		else if (opt === "en") { 
-			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full") && site.tags.includes("en")).map(site => site.domain));
+			loc.push(... Object.values(config.sites).filter(site => site.tags.includes("full") && site.tags.includes("en")).map(site => site.domain));
 		}
 		// ALL NG
 		else if (opt === "ng") {
-			loc.push(Object.values(config.sites).filter(site => site.tags.includes("full")).map(site => site.domain));
+			loc.push(... Object.values(config.sites).filter(site => site.tags.includes("full")).map(site => site.domain));
 		}
 		// LITE SITES
 		else if (opt === "lite") { 
-			loc.push(Object.values(config.sites).filter(site => site.tags.includes("lite")).map(site => site.domain));
+			loc.push(... Object.values(config.sites).filter(site => site.tags.includes("lite")).map(site => site.domain));
 		}
 		else {
 			loc.push(opt);
