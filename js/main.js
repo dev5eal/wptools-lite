@@ -354,10 +354,10 @@ function getDomains(dom, target, branch){
 	switch (target) {
 		case "live" : return "https://"+config.domains[dom];
 		case "rc" : return "https://rc."+dom+".kaspersky-labs.com";
-		case "branch" : return "https://"+branch+"_master."+dom+".prod.renderer.kaspersky-labs.com";
-		case "license" : return "https://license-local_"+branch+"_master."+dom+".prod.renderer.kaspersky-labs.com";
+		case "branch" : return "https://"+branch+"_master_"+dom+".prod.renderer.kaspersky-labs.com";
+		case "license" : return "https://license-local_"+branch+"_master_"+dom+".prod.renderer.kaspersky-labs.com";
 		case "editor" : return "https://site-editor.kaspersky-labs.com/"+branch+"/"+dom+"/pageEditor";
-		case "test" : return "https://"+branch+"_test-st."+dom+".test.renderer.kaspersky-labs.com";
+		case "test" : return "https://"+branch+"_test-st_"+dom+".test.renderer.kaspersky-labs.com";
 	}
 }
 function overrideLocalesFromInput(){
