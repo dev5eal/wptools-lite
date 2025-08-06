@@ -353,7 +353,7 @@ function getParams(result = ""){
 function getDomains(dom, target, branch){
 	switch (target) {
 		case "live" : return "https://"+config.domains[dom];
-		case "rc" : return "https://rc."+dom+".kaspersky-labs.com";
+		case "rc" : return "https://"+dom+".rc.kaspersky-labs.com";
 		case "branch" : return "https://"+branch+"_master_"+dom+".prod.renderer.kaspersky-labs.com";
 		case "license" : return "https://license-local_"+branch+"_master_"+dom+".prod.renderer.kaspersky-labs.com";
 		case "editor" : return "https://site-editor.kaspersky-labs.com/"+branch+"/"+dom+"/pageEditor";
@@ -423,3 +423,4 @@ function run(){
 		document.getElementById("navigator-input").value = Utils.filterUnique(document.getElementById("navigator-input").value.split('\n')).join("\n");
 	});
 }
+
